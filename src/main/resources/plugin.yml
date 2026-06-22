@@ -1,0 +1,25 @@
+name: L-BedWarsProxy
+version: 1.0.0
+main: com.lbedwars.proxy.LBedWarsProxy
+api-version: 1.19
+folia-supported: true
+softdepend: [Parties, PlaceholderAPI]
+author: squezsaz
+description: L-BedWars lobby proxy plugin - arena status tracking and player routing
+
+commands:
+  bw:
+    description: L-BedWars join command
+    usage: /bw join <mode>
+  bwa:
+    description: L-BedWars admin commands (gui, tp, leaderboard)
+    usage: /bwa gui [all|solo|duo|trio|quad]
+    permission: lbedwarsproxy.admin
+
+permissions:
+  lbedwarsproxy.play:
+    description: Allows joining arenas
+    default: true
+  lbedwarsproxy.admin:
+    description: Allows admin commands
+    default: op

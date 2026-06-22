@@ -1,0 +1,60 @@
+# L-BedWarsProxy Configuration
+
+# Language: en (English) / tr (Turkish)
+language: en
+
+# Socket server port for game server TCP connections
+socket-port: 5000
+
+# Bind address (0.0.0.0 = all interfaces, 127.0.0.1 = localhost only)
+bind-address: 127.0.0.1
+
+# Shared secret for socket authentication (must match L-BedWars config)
+socket-token: "change-me"
+
+# Allowed IPs/CIDRs for game server connections (empty = allow all)
+allowed-ips:
+  - "127.0.0.1"
+
+# Maximum concurrent socket connections
+max-connections: 50
+
+# MySQL database for stats/leaderboard/lobby-balancer (optional)
+# If not configured, stats and lobby-balancer features are disabled
+database:
+  host: "localhost"
+  port: 3306
+  database: "lbedwars"
+  username: "root"
+  password: ""
+  table-prefix: ""
+  pool-size: 5
+
+# Health check: detect and mark timed-out game servers
+health-check:
+  enabled: true
+  # Seconds without an update before a server is marked offline
+  timeout-seconds: 15
+
+# Queue system: when no arena is available, players wait in queue
+queue:
+  # Enable queue system (players are automatically connected when a slot opens)
+  enabled: false
+  # Permission nodes that give queue priority (players with these skip to front)
+  # Example: priority-permissions:
+  #   - "lbedwarsproxy.queue.priority"
+  #   - "some.other.priority.perm"
+  priority-permissions:
+    - "lbedwarsproxy.queue.priority"
+
+# Leaderboard hologram (shows top players using TextDisplay entities)
+holograms:
+  leaderboard:
+    # Enable the leaderboard hologram
+    enabled: false
+    # Number of top players to show
+    lines: 10
+    # Update interval in seconds
+    update-interval: 60
+
+
