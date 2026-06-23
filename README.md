@@ -186,7 +186,7 @@ holograms:
 |---|---|---|
 | Paper/Spigot 1.19+ | Server | Yes |
 | PlaceholderAPI | Plugin | No (placeholders unavailable) |
-| Parties (alessiodp) | Plugin | No (party features disabled) |
+| Parties  | Plugin | No (party features disabled) |
 
 ## Files
 
